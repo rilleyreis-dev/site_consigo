@@ -42,7 +42,7 @@ Edite os seguintes arquivos para alterar as informações da sua empresa:
 - Altere "Sua Empresa" no título e rodapé
 - Substitua "contato@suaempresa.com.br" pelo seu e-mail
 - Atualize o CNPJ no rodapé
-- Modifique o número do WhatsApp (5511999999999)
+- Modifique o número do WhatsApp (5512997635589)
 
 ### 2. Conteúdo
 
@@ -95,7 +95,7 @@ Adicione suas imagens na pasta `images/` e atualize as referências nos arquivos
 
 No arquivo `js/script.js` e em todas as páginas HTML, substitua:
 ```
-https://wa.me/5511999999999
+https://wa.me/5512997635589
 ```
 Por:
 ```
