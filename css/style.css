@@ -815,3 +815,69 @@ body {
     }
 }
 
+/* Estilos para a Seção da Fundadora */
+.founder-section {
+    padding: 80px 0;
+    background-color: #f8f9fa; /* Um cinza bem claro para destacar */
+}
+
+.founder-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.founder-image img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 50%;
+    border: 8px solid white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+.founder-bio h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #4A4A4A;
+    margin-bottom: 15px;
+}
+
+.founder-bio p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.founder-bio ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.founder-bio li {
+    font-size: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.founder-bio li i {
+    color: #7CCB92; /* Cor verde do seu tema */
+    margin-right: 12px;
+    margin-top: 4px; /* Ajuste para alinhar com o texto */
+}
+
+/* Ajuste para telas menores (celulares) */
+@media (max-width: 768px) {
+    .founder-grid {
+        grid-template-columns: 1fr; /* Coluna única no celular */
+        text-align: center;
+    }
+
+    .founder-bio li {
+        justify-content: center; /* Centraliza os itens da lista */
+    }
+}
+
