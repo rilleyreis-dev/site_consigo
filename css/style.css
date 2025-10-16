@@ -972,13 +972,12 @@ body {
 
 .timeline-container {
     position: relative;
-    /* Aumenta a largura máxima do container central */
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px 0;
 }
 
-/* Linha central da timeline */
+/* Linha central da timeline (50% do container) */
 .timeline-container::after {
     content: '';
     position: absolute;
@@ -986,7 +985,7 @@ body {
     background-color: #F2C94C;
     top: 0;
     bottom: 0;
-    left: 50%;
+    left: 50%; 
     margin-left: -1px;
     z-index: 1;
 }
@@ -994,21 +993,23 @@ body {
 .timeline-item {
     padding: 10px 40px;
     position: relative;
-    /* Aumenta a largura dos itens */
-    width: 60%;
+    /* LARGURA AUMENTADA */
+    width: 60%; 
     box-sizing: border-box;
     z-index: 2;
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* Alinhamento dos itens: Esquerda e Direita alternados (para ser mais largo) */
+/* Alinhamento dos itens: Esquerda e Direita alternados (com 60% de largura) */
 .timeline-item:nth-child(odd) {
-    left: -10%; 
+    left: 0;
+    margin-right: 20%; /* Cria o espaço na direita para o item começar a 20% da esquerda */
     padding-right: 60px;
 }
 
 .timeline-item:nth-child(even) {
-    left: 40%; 
+    left: 40%; /* 40% (o espaço em branco da esquerda) + 60% (a largura do item) = 100% */
+    margin-left: 0; 
     padding-left: 60px;
 }
 
@@ -1019,7 +1020,7 @@ body {
     height: 40px;
     background-color: #F2C94C;
     border-radius: 50%;
-    top: 15px; /* Ajusta a posição vertical do dot para o novo padding do card */
+    top: 15px; /* Ajusta a posição vertical */
     color: white;
     display: flex;
     align-items: center;
@@ -1029,20 +1030,21 @@ body {
     z-index: 3;
 }
 
-/* Posição do dot para itens da Esquerda */
+/* POSICIONAMENTO FINAL CORRIGIDO DOS DOTS (Alinhamento perfeito na linha central) */
+/* Dot para itens da Esquerda: Posicionado na Borda Direita do item (que está 20% antes da linha central) */
 .timeline-item:nth-child(odd) .timeline-dot {
-    right: -20px;
+    right: -24px; /* Ajuste fino para alinhar perfeitamente com a linha */
 }
 
-/* Posição do dot para itens da Direita */
+/* Dot para itens da Direita: Posicionado na Borda Esquerda do item (que começa na linha central) */
 .timeline-item:nth-child(even) .timeline-dot {
-    left: -20px;
+    left: 20px; /* Ajuste fino para alinhar perfeitamente com a linha */
 }
 
-/* Conteúdo do item da timeline */
+
+/* Conteúdo do item da timeline (compactado) */
 .timeline-content {
     background: #FFFFFF;
-    /* REDUZ O PADDING VERTICAL para diminuir a altura */
     padding: 15px 20px; 
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -1053,11 +1055,11 @@ body {
     font-size: 20px;
     color: #4A4A4A;
     margin-top: 0;
-    margin-bottom: 5px; /* Reduz espaço abaixo do título */
+    margin-bottom: 5px;
 }
 
 .timeline-content p {
-    font-size: 15px; /* Torna o corpo do texto mais compacto */
+    font-size: 15px; 
     color: #4A4A4A;
     line-height: 1.5;
 }
@@ -1065,7 +1067,7 @@ body {
 .timeline-details {
     list-style: disc;
     padding-left: 15px;
-    margin-top: 10px; /* Reduz espaço acima da lista */
+    margin-top: 10px;
     color: #666;
     font-size: 14px;
 }
@@ -1078,7 +1080,8 @@ body {
 
     .timeline-item {
         width: 100%;
-        left: 0 !important; /* Força para a esquerda */
+        left: 0 !important; 
+        margin-right: 0;
         padding-left: 60px;
         padding-right: 15px;
     }
@@ -1087,11 +1090,12 @@ body {
     .timeline-item:nth-child(even) .timeline-dot {
         left: 1px;
         margin-left: 0;
-        top: 25px; /* Ajuste para o novo padding do mobile */
+        right: auto;
+        top: 25px;
     }
 
     .timeline-content {
-        padding: 20px 20px; /* Ajusta o padding para melhor visualização no mobile */
+        padding: 20px 20px;
     }
 }
 
