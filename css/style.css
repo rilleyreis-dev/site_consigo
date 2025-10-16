@@ -100,15 +100,25 @@ body {
     background: #E6B800;
 }
 
-/* Navigation */
+/* Navigation - CORRIGIDO */
 .navigation {
     padding: 0;
+    display: flex;
+    justify-content: center; /* Centraliza a nav no container */
+    width: 100%;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
+    padding: 0;
+    margin: 0;
     gap: 0;
+    /* Ajuste para distribuir os itens no desktop */
+    justify-content: space-around; 
+    align-items: center;
+    width: 100%;
+    max-width: 1000px; /* Limita o menu centralizado */
 }
 
 .nav-menu li {
@@ -563,7 +573,6 @@ body {
     padding: 80px 0;
 }
 
-/* Versão original do grid detalhado, permitindo mais de uma coluna */
 .services-grid-detailed {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -1118,7 +1127,7 @@ body {
 /* Ajuste o ícone e o card para a página de Cursos */
 .course-card .service-icon i {
     font-size: 50px;
-    color: #7CCB92; /* Volta para a cor original ou a cor verde */
+    color: #7CCB92;
 }
 
 /* Novo estilo para a lista de detalhes (público e carga horária) */
@@ -1127,7 +1136,7 @@ body {
     padding: 15px 0 0;
     margin: 15px 0 0;
     border-top: 1px solid #E5E5E5;
-    text-align: center; /* Volta ao centro se o layout for 2 ou 3 colunas */
+    text-align: center;
 }
 
 .course-details li {
