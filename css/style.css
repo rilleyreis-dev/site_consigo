@@ -967,12 +967,13 @@ body {
 }
 
 /* ------------------------------------------- */
-/* --- ESTILOS ADICIONADOS PARA A TIMELINE --- */
+/* --- ESTILOS ATUALIZADOS PARA A TIMELINE --- */
 /* ------------------------------------------- */
 
 .timeline-container {
     position: relative;
-    max-width: 900px;
+    /* Aumenta a largura máxima do container central */
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px 0;
 }
@@ -993,31 +994,32 @@ body {
 .timeline-item {
     padding: 10px 40px;
     position: relative;
-    width: 50%;
+    /* Aumenta a largura dos itens */
+    width: 60%;
     box-sizing: border-box;
     z-index: 2;
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* Alinhamento dos itens: Esquerda e Direita alternados */
+/* Alinhamento dos itens: Esquerda e Direita alternados (para ser mais largo) */
 .timeline-item:nth-child(odd) {
-    left: 0;
+    left: -10%; 
     padding-right: 60px;
 }
 
 .timeline-item:nth-child(even) {
-    left: 50%;
+    left: 40%; 
     padding-left: 60px;
 }
 
-/* O "Dot" (círculo/ícone) de cada item */
+/* O "Dot" (círculo/ícone) */
 .timeline-dot {
     position: absolute;
     width: 40px;
     height: 40px;
     background-color: #F2C94C;
     border-radius: 50%;
-    top: 30px;
+    top: 15px; /* Ajusta a posição vertical do dot para o novo padding do card */
     color: white;
     display: flex;
     align-items: center;
@@ -1040,64 +1042,35 @@ body {
 /* Conteúdo do item da timeline */
 .timeline-content {
     background: #FFFFFF;
-    padding: 20px;
+    /* REDUZ O PADDING VERTICAL para diminuir a altura */
+    padding: 15px 20px; 
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-left: 5px solid #F2C94C;
 }
 
 .timeline-content h3 {
+    font-size: 20px;
     color: #4A4A4A;
     margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 22px;
+    margin-bottom: 5px; /* Reduz espaço abaixo do título */
+}
+
+.timeline-content p {
+    font-size: 15px; /* Torna o corpo do texto mais compacto */
+    color: #4A4A4A;
+    line-height: 1.5;
 }
 
 .timeline-details {
     list-style: disc;
-    padding-left: 20px;
-    margin-top: 15px;
+    padding-left: 15px;
+    margin-top: 10px; /* Reduz espaço acima da lista */
     color: #666;
     font-size: 14px;
 }
 
-/* Estilos para a nova seção de Benefícios e Formatos (Footer da Empresa) */
-.program-summary-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 60px;
-}
-
-.summary-card {
-    background: #FFFFFF;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border-top: 4px solid #F2C94C;
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.summary-card h3 {
-    color: #4A4A4A;
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-.format-list, .benefit-list {
-    list-style-type: '✅ ';
-    padding-left: 20px;
-    margin: 0;
-}
-
-.benefit-list li, .format-list li {
-    margin-bottom: 10px;
-    line-height: 1.4;
-    color: #333;
-}
-
-/* Responsividade da Timeline (Para telas menores) */
+/* Responsividade da Timeline (Mobile) */
 @media screen and (max-width: 768px) {
     .timeline-container::after {
         left: 20px;
@@ -1105,24 +1078,25 @@ body {
 
     .timeline-item {
         width: 100%;
+        left: 0 !important; /* Força para a esquerda */
         padding-left: 60px;
         padding-right: 15px;
-        left: 0 !important;
     }
 
     .timeline-item:nth-child(odd) .timeline-dot,
     .timeline-item:nth-child(even) .timeline-dot {
         left: 1px;
         margin-left: 0;
+        top: 25px; /* Ajuste para o novo padding do mobile */
     }
 
     .timeline-content {
-        border-left: 5px solid #F2C94C;
-        border-right: none;
+        padding: 20px 20px; /* Ajusta o padding para melhor visualização no mobile */
     }
 }
 
-/* --- Estilos Específicos do Conteúdo (Volta à versão original) --- */
+
+/* --- Estilos Específicos do Conteúdo --- */
 
 /* Ajuste o ícone e o card para a página de Cursos */
 .course-card .service-icon i {
