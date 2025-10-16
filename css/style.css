@@ -967,7 +967,7 @@ body {
 }
 
 /* ------------------------------------------- */
-/* --- ESTILOS ATUALIZADOS PARA A TIMELINE --- */
+/* --- ESTILOS CORRIGIDOS PARA A TIMELINE --- */
 /* ------------------------------------------- */
 
 .timeline-container {
@@ -1002,13 +1002,15 @@ body {
 
 /* Alinhamento dos itens: Esquerda e Direita alternados (com 60% de largura) */
 .timeline-item:nth-child(odd) {
+    /* Item ímpar começa em 0, e sua margem direita empurra o dot */
     left: 0;
-    margin-right: 20%; /* Cria o espaço na direita para o item começar a 20% da esquerda */
+    margin-right: 20%; 
     padding-right: 60px;
 }
 
 .timeline-item:nth-child(even) {
-    left: 40%; /* 40% (o espaço em branco da esquerda) + 60% (a largura do item) = 100% */
+    /* Item par começa em 40% (40% + 60% = 100%) */
+    left: 40%; 
     margin-left: 0; 
     padding-left: 60px;
 }
@@ -1020,7 +1022,7 @@ body {
     height: 40px;
     background-color: #F2C94C;
     border-radius: 50%;
-    top: 15px; /* Ajusta a posição vertical */
+    top: 15px; 
     color: white;
     display: flex;
     align-items: center;
@@ -1030,15 +1032,15 @@ body {
     z-index: 3;
 }
 
-/* POSICIONAMENTO FINAL CORRIGIDO DOS DOTS (Alinhamento perfeito na linha central) */
-/* Dot para itens da Esquerda: Posicionado na Borda Direita do item (que está 20% antes da linha central) */
+/* POSICIONAMENTO FINAL CORRIGIDO DOS DOTS */
+/* Dot para itens da Esquerda: Posicionado na Borda Direita do item, ALINHADO ao 50% */
 .timeline-item:nth-child(odd) .timeline-dot {
-    right: -24px; /* Ajuste fino para alinhar perfeitamente com a linha */
+    right: 20px; /* Alinha o dot no 50% menos a largura de padding/dot */
 }
 
-/* Dot para itens da Direita: Posicionado na Borda Esquerda do item (que começa na linha central) */
+/* Dot para itens da Direita: Posicionado na Borda Esquerda do item, ALINHADO ao 50% */
 .timeline-item:nth-child(even) .timeline-dot {
-    left: 20px; /* Ajuste fino para alinhar perfeitamente com a linha */
+    left: 20px; /* Alinha o dot no 50% mais a largura do padding/dot */
 }
 
 
