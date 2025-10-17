@@ -7,6 +7,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
+    font-size: .8rem;
     line-height: 1.6;
     color: #4A4A4A;
     background-color: #FFFFFF;
@@ -1003,14 +1004,14 @@ body {
 /* Alinhamento dos itens: Esquerda e Direita alternados (com 60% de largura) */
 .timeline-item:nth-child(odd) {
     /* Item ímpar começa em 0, e sua margem direita empurra o dot */
-    left: 0;
+    left: -10%;
     margin-right: 20%; 
     padding-right: 60px;
 }
 
 .timeline-item:nth-child(even) {
     /* Item par começa em 40% (40% + 60% = 100%) */
-    left: 40%; 
+    left: 50%; 
     margin-left: 0; 
     padding-left: 60px;
 }
