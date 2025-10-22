@@ -1155,14 +1155,11 @@ body {
 
 .partners-grid {
     display: grid;
-    /* FORÇA OS CARDS A FICAREM EM UMA LINHA ÚNICA */
-    /* Cria 4 colunas com largura mínima de 300px e sem limite máximo */
-    grid-template-columns: repeat(4, minmax(300px, 1fr)); 
+    /* PERMITE QUE OS CARDS SE AJUSTEM E QUEBREM DE LINHA */
+    /* Garante que o grid se ajuste para caber dentro do container sem rolagem lateral */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 30px;
-    
-    /* PERMITE A ROLAGEM HORIZONTAL SE O CONTEÚDO EXCEDER A TELA */
-    overflow-x: auto; 
-    padding-bottom: 20px; /* Adiciona um padding para a barra de rolagem não cortar a sombra */
+    /* Removidos: overflow-x: auto e padding-bottom */
 }
 
 /* O resto dos estilos dos cards permanece o mesmo */
