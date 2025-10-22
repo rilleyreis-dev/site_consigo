@@ -1146,19 +1146,26 @@ body {
     text-align: center;
 }
 
-/* --- ESTILOS ADICIONADOS PARA PARCEIRAS --- */
+/* --- ESTILOS ADICIONADOS PARA PARCEIRAS (AJUSTE PARA LINHA ÚNICA) --- */
 
 .partners-section {
     padding: 80px 0;
-    background-color: #f8f8f8; /* Fundo leve para destacar os cards */
+    background-color: #f8f8f8;
 }
 
 .partners-grid {
     display: grid;
-    /* Ajustado para 3 colunas em desktop, responsivo */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    /* FORÇA OS CARDS A FICAREM EM UMA LINHA ÚNICA */
+    /* Cria 4 colunas com largura mínima de 300px e sem limite máximo */
+    grid-template-columns: repeat(4, minmax(300px, 1fr)); 
     gap: 30px;
+    
+    /* PERMITE A ROLAGEM HORIZONTAL SE O CONTEÚDO EXCEDER A TELA */
+    overflow-x: auto; 
+    padding-bottom: 20px; /* Adiciona um padding para a barra de rolagem não cortar a sombra */
 }
+
+/* O resto dos estilos dos cards permanece o mesmo */
 
 .partner-card {
     background-color: #ffffff;
@@ -1175,8 +1182,8 @@ body {
 
 .partner-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(41, 196, 217, 0.2); /* Sombra inspirada no .course-item:hover */
-    border-color: #29C4D9; /* Borda inspirada no .course-item:hover */
+    box-shadow: 0 10px 30px rgba(41, 196, 217, 0.2); 
+    border-color: #29C4D9; 
 }
 
 .partner-image {
@@ -1185,11 +1192,11 @@ body {
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 20px;
-    border: 4px solid #7CCB92; /* Cor da borda inspirada no verde primário */
+    border: 4px solid #7CCB92; 
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 0 4px #fff; /* Borda interna branca para destacar a imagem */
+    box-shadow: 0 0 0 4px #fff; 
 }
 
 .partner-image img {
@@ -1214,7 +1221,7 @@ body {
 }
 
 .partner-skills li {
-    font-size: 0.9rem; /* Um pouco maior que o body base */
+    font-size: 0.9rem;
     color: #4A4A4A;
     margin-bottom: 8px;
     position: relative;
@@ -1222,11 +1229,10 @@ body {
 }
 
 .partner-skills li::before {
-    /* Utilizando Font Awesome para consistência, se tiver sido carregado */
-    content: "\f058"; /* Ícone de checkmark sólido */
+    content: "\f058"; 
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
-    color: #7CCB92; /* Cor do ícone (verde primário) */
+    color: #7CCB92; 
     position: absolute;
     left: 0;
     top: 0;
@@ -1234,19 +1240,18 @@ body {
 }
 
 .partner-card .btn-primary {
-    margin-top: auto; /* Empurra o botão para a parte inferior */
+    margin-top: auto; 
     font-size: 0.9rem;
     padding: 10px 20px;
 }
 
 /* CTA Section - Ajuste para a nova mensagem na página de parceiras */
-/* Reutilizando as cores fortes do seu CTA */
 .cta-section.partner-cta {
     background: linear-gradient(135deg, #29C4D9 0%, #7CCB92 100%);
 }
 
 .cta-section.partner-cta .btn-primary {
-    background-color: #F2C94C; /* Botão amarelo */
+    background-color: #F2C94C; 
     color: #4A4A4A;
     font-weight: 700;
 }
@@ -1256,9 +1261,16 @@ body {
     color: #FFFFFF;
 }
 
-/* --- RESPONSIVIDADE ADICIONAL PARA PARCEIRAS --- */
-@media (max-width: 768px) {
+/* --- RESPONSIVIDADE ADICIONAL PARA PARCEIRAS (AJUSTADA) --- */
+@media (max-width: 1200px) {
+    /* Garante a rolagem horizontal em telas menores que o container */
     .partners-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(4, minmax(300px, 1fr)); 
+    }
+}
+@media (max-width: 768px) {
+    /* Mantém a rolagem horizontal para telas menores também */
+    .partners-grid {
+        grid-template-columns: repeat(4, minmax(300px, 1fr)); 
     }
 }
