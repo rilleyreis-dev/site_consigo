@@ -141,8 +141,8 @@ body {
 .nav-menu a:hover,
 .nav-menu a.active {
     background: #E5E5E5;
-    border-bottom-color: #29C4D9;
-    color: #29C4D9;
+    border-bottom-color: #1C6077;
+    color: #1C6077;
 }
 
 /* --- Estilos para o Submenu (Dropdown) --- */
@@ -157,7 +157,7 @@ body {
     min-width: 220px;
     background: #FFFFFF;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border-top: 3px solid #29C4D9;
+    border-top: 3px solid #1C6077;
     z-index: 1010;
     border-radius: 0 0 5px 5px;
 }
@@ -179,7 +179,7 @@ body {
 
 .submenu a:hover {
     background: #F8F8F8;
-    color: #29C4D9;
+    color: #1C6077;
     border-bottom-color: transparent;
 }
 
