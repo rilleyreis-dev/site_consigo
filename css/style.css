@@ -210,7 +210,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #29C4D9 0%, #7CCB92 100%);
+    background: #1C6077;
     color: white;
     padding: 80px 0;
     min-height: 600px;
