@@ -210,7 +210,7 @@ body {
 
 .hero {
     /* Aqui combinamos o seu azul (#1C6077) com transparência + a imagem de fundo */
-    background: linear-gradient(to right, rgba(28, 96, 119, 0.9), rgba(28, 96, 119, 0.6)), url('images/banner_index.jpg');
+    background: linear-gradient(to right, rgba(28, 96, 119, 0.9), rgba(28, 96, 119, 0.6)), url('../images/banner_index.jpg');
     
     background-size: cover; /* Faz a imagem cobrir toda a área */
     background-position: center; /* Centraliza a imagem */
