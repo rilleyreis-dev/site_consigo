@@ -208,21 +208,33 @@ body {
     transition: 0.3s;
 }
 
-/* Hero Section */
 .hero {
-    background: #1C6077;
+    /* Aqui combinamos o seu azul (#1C6077) com transparência + a imagem de fundo */
+    background: linear-gradient(to right, rgba(28, 96, 119, 0.9), rgba(28, 96, 119, 0.6)), url('images/banner_index.jpg');
+    
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat;
+    
     color: white;
-    padding: 80px 0;
+    padding: 100px 0; /* Aumentei um pouco para dar respiro */
     min-height: 600px;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    /* Removemos o grid de 2 colunas, pois agora é uma coluna só */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.hero-text {
+    /* Limitamos a largura para o texto não ir até o final da tela, fica mais elegante */
+    max-width: 600px; 
 }
 
 .hero-text h2 {
@@ -230,6 +242,7 @@ body {
     font-weight: 700;
     margin-bottom: 20px;
     line-height: 1.2;
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.3); /* Ajuda na leitura */
 }
 
 .hero-text .highlight {
@@ -241,14 +254,7 @@ body {
     margin-bottom: 30px;
     color: #FFFFFF;
     line-height: 1.6;
-    opacity: 0.9;
-}
-
-.hero-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    opacity: 0.95; /* Aumentei um pouco a opacidade */
 }
 
 /* Buttons */
