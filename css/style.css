@@ -228,7 +228,7 @@ body {
     /* Removemos o grid de 2 colunas, pois agora é uma coluna só */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     width: 100%;
 }
 
