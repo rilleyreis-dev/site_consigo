@@ -324,29 +324,43 @@ body {
 .service-item {
     text-align: center;
     padding: 30px 20px;
-    background: #E5E5E5;
     border-radius: 10px;
     transition: all 0.3s ease;
     border: 2px solid transparent;
-}
-
-.service-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(41, 196, 217, 0.2);
-    border-color: #29C4D9;
-    background: #FFFFFF;
-}
-
-.service-item i {
-    font-size: 48px;
-    color: #7CCB92;
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 350px;
 }
 
 .service-item h4 {
     font-size: 18px;
-    color: #4A4A4A;
     font-weight: 600;
+    color: #FFFFFF;
+    margin-top: auto;
+}
+
+.service-item:nth-child(1) {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/nr1-riscos.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.service-item:nth-child(2) {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/programa-corporativo.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.service-item:nth-child(3) {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/cursos-formacoes.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.service-item:nth-child(4) {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/terapias.jpeg');
+    background-size: cover;
+    background-position: center;
 }
 
 /* Courses Section */
