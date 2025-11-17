@@ -90,10 +90,11 @@
                 </div>
                 
                 <div class="contact-form-section">
-                    <form class="contact-form" 
-                        id="contactForm"
-                        action="https://formsubmit.co/badger17058@aminating.com"
-                        method="post"
+                    <form 
+                        class="contact-form" 
+                        id="contactForm" 
+                        action="https://formsubmit.co/seu-email-aqui@dominio.com" 
+                        method="POST"
                     >
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Nome *" required>
@@ -110,6 +111,10 @@
                         <div class="form-group">
                             <textarea id="message" name="message" placeholder="Mensagem *" rows="6" required></textarea>
                         </div>
+
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <!-- <input type="hidden" name="_next" value="https://seusite.com/obrigado.html"> -->
                         
                         <button type="submit" class="btn-primary">Enviar Mensagem</button>
                     </form>
