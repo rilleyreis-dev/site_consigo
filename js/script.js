@@ -1,5 +1,6 @@
-// Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
+
+    // Mobile Menu Toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
     
@@ -13,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const navLinks = document.querySelectorAll('.nav-menu a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                // Apenas fecha o menu mobile se estiver aberto e for um link de navegação
                 if (window.innerWidth <= 768) {
                     navMenu.classList.remove('active');
                     mobileMenuToggle.classList.remove('active');
@@ -29,11 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-});
 
-// Smooth Scrolling for Anchor Links (Versão original)
-/*
-document.addEventListener('DOMContentLoaded', function() {
+    // Smooth Scrolling for Anchor Links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     
     anchorLinks.forEach(link => {
@@ -43,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (href === '#' || href === '#contato') {
                 e.preventDefault();
                 
-                // If it's a contact link, scroll to contact form or redirect to contact page
                 const contactForm = document.querySelector('.contact-form');
                 if (contactForm) {
                     contactForm.scrollIntoView({
@@ -51,144 +47,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         block: 'start'
                     });
                 } else {
-                    // Redirect to contact page if not on contact page
                     window.location.href = 'contato.html';
                 }
             }
         });
     });
-});
-*/
 
-// Contact Form Handling
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(contactForm);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const subject = formData.get('subject') || 'Contato via site';
-            const message = formData.get('message');
-            
-            // Basic validation
-            if (!name || !email || !message) {
-                showNotification('Por favor, preencha todos os campos obrigatórios.', 'error');
-                return;
-            }
-            
-            if (!isValidEmail(email)) {
-                showNotification('Por favor, insira um e-mail válido.', 'error');
-                return;
-            }
-            
-            // Simulate form submission (replace with actual form handling)
-            showNotification('Enviando mensagem...', 'info');
-            
-            // Simulate API call
-            setTimeout(() => {
-                showNotification('Mensagem enviada com sucesso! Entraremos em contato em breve.', 'success');
-                contactForm.reset();
-            }, 2000);
-        });
-    }
-});
-
-// Email validation function
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-// Notification system
-function showNotification(message, type = 'info') {
-    // Remove existing notifications
-    const existingNotifications = document.querySelectorAll('.notification');
-    existingNotifications.forEach(notification => notification.remove());
-    
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.innerHTML = `
-        <div class="notification-content">
-            <span class="notification-message">${message}</span>
-            <button class="notification-close">&times;</button>
-        </div>
-    `;
-    
-    // Add styles
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: ${type === 'success' ? '#27ae60' : type === 'error' ? '#e74c3c' : '#3498db'};
-        color: white;
-        padding: 15px 20px;
-        border-radius: 5px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        z-index: 10000;
-        max-width: 400px;
-        animation: slideInRight 0.3s ease;
-    `;
-    
-    // Add animation styles
-    if (!document.querySelector('#notification-styles')) {
-        const style = document.createElement('style');
-        style.id = 'notification-styles';
-        style.textContent = `
-            @keyframes slideInRight {
-                from { transform: translateX(100%); opacity: 0; }
-                to { transform: translateX(0); opacity: 1; }
-            }
-            .notification-content {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: 15px;
-            }
-            .notification-close {
-                background: none;
-                border: none;
-                color: white;
-                font-size: 20px;
-                cursor: pointer;
-                padding: 0;
-                width: 20px;
-                height: 20px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .notification-close:hover {
-                opacity: 0.7;
-            }
-        `;
-        document.head.appendChild(style);
-    }
-    
-    // Add to page
-    document.body.appendChild(notification);
-    
-    // Close button functionality
-    const closeButton = notification.querySelector('.notification-close');
-    closeButton.addEventListener('click', () => {
-        notification.remove();
-    });
-    
-    // Auto remove after 5 seconds
-    setTimeout(() => {
-        if (notification.parentNode) {
-            notification.remove();
-        }
-    }, 5000);
-}
-
-// Scroll animations (Versão corrigida)
-document.addEventListener('DOMContentLoaded', function() {
+    // Scroll animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -203,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    // OBSERVE O NOVO CARD: .partner-card ADICIONADO AQUI
     const animatedElements = document.querySelectorAll('.service-item, .course-item, .service-card, .stat-item, .partner-card');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
@@ -211,16 +75,14 @@ document.addEventListener('DOMContentLoaded', function() {
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
-});
 
-// Counter animation for stats
-document.addEventListener('DOMContentLoaded', function() {
+    // Counter animation for stats
     const statNumbers = document.querySelectorAll('.stat-number');
     
     const animateCounter = (element) => {
         const target = parseInt(element.textContent.replace(/\D/g, ''));
-        const duration = 2000; // 2 seconds
-        const step = target / (duration / 16); // 60fps
+        const duration = 2000;
+        const step = target / (duration / 16);
         let current = 0;
         
         const timer = setInterval(() => {
@@ -245,10 +107,8 @@ document.addEventListener('DOMContentLoaded', function() {
     statNumbers.forEach(stat => {
         statsObserver.observe(stat);
     });
-});
 
-// Header scroll effect
-document.addEventListener('DOMContentLoaded', function() {
+    // Header scroll effect
     const header = document.querySelector('.header');
     let lastScrollTop = 0;
     
@@ -265,10 +125,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         lastScrollTop = scrollTop;
     });
-});
 
-// Lazy loading for images
-document.addEventListener('DOMContentLoaded', function() {
+    // Lazy loading for images
     const images = document.querySelectorAll('img[data-src]');
     
     const imageObserver = new IntersectionObserver(function(entries) {
@@ -283,11 +141,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     images.forEach(img => imageObserver.observe(img));
-});
 
-// Back to top button
-document.addEventListener('DOMContentLoaded', function() {
-    // Create back to top button
+    // Back to top button
     const backToTopButton = document.createElement('button');
     backToTopButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
     backToTopButton.className = 'back-to-top';
@@ -312,7 +167,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     document.body.appendChild(backToTopButton);
     
-    // Show/hide button based on scroll position
     window.addEventListener('scroll', function() {
         if (window.pageYOffset > 300) {
             backToTopButton.style.opacity = '1';
@@ -323,7 +177,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Scroll to top functionality
     backToTopButton.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
@@ -331,7 +184,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Hover effect
     backToTopButton.addEventListener('mouseenter', function() {
         this.style.background = '#E6B800';
         this.style.transform = 'scale(1.1)';
@@ -341,10 +193,8 @@ document.addEventListener('DOMContentLoaded', function() {
         this.style.background = '#F2C94C';
         this.style.transform = 'scale(1)';
     });
-});
 
-// Form field focus effects
-document.addEventListener('DOMContentLoaded', function() {
+    // Form field focus effects
     const formFields = document.querySelectorAll('input, textarea');
     
     formFields.forEach(field => {
@@ -363,4 +213,5 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
 });
