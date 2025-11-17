@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Smooth Scrolling for Anchor Links (Versão original)
+/*
 document.addEventListener('DOMContentLoaded', function() {
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     
@@ -57,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+*/
 
 // Contact Form Handling
 document.addEventListener('DOMContentLoaded', function() {
