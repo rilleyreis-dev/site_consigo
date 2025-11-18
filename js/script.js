@@ -213,5 +213,45 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // --- NOVO CÓDIGO PARA ENVIO POR WHATSAPP ---
+    
+    /**
+     * Lógica para capturar dados do formulário e enviar via link do WhatsApp.
+     */
+    const whatsappForm = document.querySelector('.js-whatsapp-form');
+    // Número de contato (inclua 55, DDD e o número)
+    const whatsappNumber = '5512997635589'; 
+
+    if (whatsappForm) {
+        whatsappForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Impede o envio padrão
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Monta a mensagem para o WhatsApp com quebras de linha
+            let whatsappMessage = `*SOLICITAÇÃO DE CONTATO VIA SITE*\n\n`;
+            whatsappMessage += `*Nome:* ${name}\n`;
+            whatsappMessage += `*E-mail:* ${email}\n`;
+            
+            if (subject) {
+                whatsappMessage += `*Assunto:* ${subject}\n`;
+            }
+            
+            whatsappMessage += `*Mensagem:*\n${message}`;
+
+            // Codifica a mensagem para URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+
+            // Cria o link do WhatsApp
+            const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+            // Abre o WhatsApp em uma nova aba
+            window.open(whatsappLink, '_blank');
+        });
+    }
 
 });
