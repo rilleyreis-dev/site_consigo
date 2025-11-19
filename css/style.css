@@ -515,7 +515,6 @@ body {
     flex-direction: column;
     align-items: center;
     line-height: 1.1;
-    /* AJUSTE: Redução do tamanho da fonte */
     font-size: 24px; 
     font-weight: 700;
 }
@@ -571,7 +570,7 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 10px;
     font-weight: 500;
 }
 
@@ -585,7 +584,7 @@ body {
 
 /* --- ESTILOS DAS REDES SOCIAIS --- */
 .footer-social p {
-    font-size: 15px;
+    font-size: 11px;
     line-height: 1.5;
     margin-bottom: 20px;
     /* AJUSTE: Garante que o texto fique centralizado à esquerda e os ícones à direita */
