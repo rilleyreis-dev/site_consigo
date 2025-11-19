@@ -515,7 +515,8 @@ body {
     flex-direction: column;
     align-items: center;
     line-height: 1.1;
-    font-size: 30px; 
+    /* AJUSTE: Redução do tamanho da fonte */
+    font-size: 24px; 
     font-weight: 700;
 }
 
@@ -537,7 +538,7 @@ body {
 .footer-section {
     flex-basis: 35%;
     padding-left: 20px;
-    border-left: 1px solid rgba(255, 255, 255, 0.3); /* Linha divisória BRANCA e semi-transparente */
+    border-left: 1px solid rgba(255, 255, 255, 0.3); 
 }
 
 .footer-info {
@@ -579,7 +580,7 @@ body {
     margin-right: 10px;
     width: 20px; 
     text-align: center;
-    color: var(--accent-yellow); /* Ícones de contato em Amarelo para destaque */
+    color: var(--accent-yellow); 
 }
 
 /* --- ESTILOS DAS REDES SOCIAIS --- */
@@ -587,11 +588,15 @@ body {
     font-size: 15px;
     line-height: 1.5;
     margin-bottom: 20px;
+    /* AJUSTE: Garante que o texto fique centralizado à esquerda e os ícones à direita */
+    text-align: left;
 }
 
 .social-icons {
     display: flex;
     gap: 15px;
+    /* AJUSTE PRINCIPAL: Alinha os ícones à direita */
+    justify-content: flex-end; 
 }
 
 .social-icon {
@@ -600,17 +605,20 @@ body {
     align-items: center;
     width: 45px;
     height: 45px;
-    background-color: var(--accent-yellow); /* Fundo dos ícones em Amarelo */
-    color: var(--text-dark); /* Cor do ícone em Preto/Escuro */
-    border-radius: 50%;
+    /* AJUSTE: Fundo em branco */
+    background-color: var(--text-light); 
+    /* AJUSTE: Cor do ícone no tom do fundo (escuro) */
+    color: var(--primary-bg-dark); 
+    border-radius: 50%; /* Torna-o circular */
     font-size: 20px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: all 0.3s ease;
 }
 
-/* Efeito Hover */
+/* AJUSTE: Efeito Hover Circular */
 .social-icon:hover {
-    background-color: var(--text-light); /* Fundo Branco no hover */
-    color: var(--primary-bg-dark); /* Ícone no tom do fundo no hover */
+    background-color: var(--accent-yellow); /* Fundo Amarelo no hover */
+    color: var(--text-dark); /* Ícone Preto no hover */
+    transform: scale(1.1); /* Um pequeno zoom para feedback visual */
 }
 
 /* --- RESPONSIVIDADE BÁSICA (Abaixo de 768px) --- */
@@ -634,26 +642,28 @@ body {
     }
     
     .logo-text {
-        font-size: 24px;
+        font-size: 20px; /* Redução adicional para telas pequenas */
     }
 
     .section-title {
         text-align: center;
     }
     
-    /* Centraliza a linha sob o título */
     .section-title::before {
         left: 50%;
         transform: translateX(-50%);
     }
 
-    /* Centraliza as informações e ícones em dispositivos móveis */
     .footer-info .info-item {
         justify-content: center;
     }
     
+    .footer-social p {
+        text-align: center; /* Centraliza o texto social em mobile */
+    }
+    
     .social-icons {
-        justify-content: center;
+        justify-content: center; /* Centraliza os ícones em mobile */
     }
 }
 
