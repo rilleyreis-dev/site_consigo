@@ -480,6 +480,183 @@ body {
     opacity: 0.9;
 }
 
+/* Info footer */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 40px; 
+}
+
+/* --- ESTILOS DO LOGO --- */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 40px; 
+}
+
+/* --- ESTILOS DO LOGO --- */
+.footer-logo {
+    flex-basis: 30%; 
+    min-width: 200px;
+    text-align: center;
+    padding-right: 20px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.1;
+    font-size: 30px; 
+    font-weight: 700;
+}
+
+.logo-text .line:first-child {
+    position: relative;
+}
+
+/* Linha de sublinhado - BRANCA */
+.logo-text .line:first-child::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-light);
+    margin-top: 5px;
+}
+
+/* --- ESTILOS DAS SEÇÕES (Informações e Redes Sociais) --- */
+.footer-section {
+    flex-basis: 35%;
+    padding-left: 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.3); /* Linha divisória BRANCA e semi-transparente */
+}
+
+.footer-info {
+    flex-basis: 30%; 
+}
+
+.section-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* Linha abaixo dos títulos ACESSE e SIGA-NOS - BRANCA */
+.section-title::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--text-light);
+}
+
+/* --- ESTILOS DA INFORMAÇÃO DE CONTATO --- */
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.info-item .icon {
+    font-size: 18px;
+    margin-right: 10px;
+    width: 20px; 
+    text-align: center;
+    color: var(--accent-yellow); /* Ícones de contato em Amarelo para destaque */
+}
+
+/* --- ESTILOS DAS REDES SOCIAIS --- */
+.footer-social p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: var(--accent-yellow); /* Fundo dos ícones em Amarelo */
+    color: var(--text-dark); /* Cor do ícone em Preto/Escuro */
+    border-radius: 50%;
+    font-size: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Efeito Hover */
+.social-icon:hover {
+    background-color: var(--text-light); /* Fundo Branco no hover */
+    color: var(--primary-bg-dark); /* Ícone no tom do fundo no hover */
+}
+
+/* --- RESPONSIVIDADE BÁSICA (Abaixo de 768px) --- */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .footer-section {
+        border-left: none; 
+        padding-left: 0;
+        flex-basis: 100%;
+        width: 100%;
+    }
+    
+    .footer-logo {
+        padding-right: 0;
+    }
+    
+    .logo-text {
+        font-size: 24px;
+    }
+
+    .section-title {
+        text-align: center;
+    }
+    
+    /* Centraliza a linha sob o título */
+    .section-title::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Centraliza as informações e ícones em dispositivos móveis */
+    .footer-info .info-item {
+        justify-content: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+}
+
 .services-header {
     background: linear-gradient(135deg, #29C4D9 0%, #F2C94C 100%);
 }
