@@ -221,8 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
      */
     const whatsappForm = document.querySelector('.js-whatsapp-form');
     // Número de contato (inclua 55, DDD e o número)
-    // const whatsappNumber = '5512997635589'; 
-    const whatsappNumber = '5512988330113'; 
+    const whatsappNumber = '5512997635589';
 
     if (whatsappForm) {
         whatsappForm.addEventListener('submit', function(e) {
