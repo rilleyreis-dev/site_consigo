@@ -28,7 +28,7 @@ body {
     /* REMOVIDO: position: sticky, top: 0, z-index: 1000, box-shadow */
 }
 
-/* NOVO: Estilos para a Barra de Navegação Fica (Sticky) */
+/* NOVO: Estilos para a Barra de Navegação FICA (Sticky) */
 .header-nav-sticky {
     background: #FFFFFF;
     position: sticky; 
@@ -111,7 +111,7 @@ body {
     justify-content: flex-start; 
     align-items: center;
     width: auto;
-    max-width: none; /* Permite que o menu use o espaço necessário */
+    max-width: none; 
 }
 
 .nav-menu li {
@@ -608,8 +608,8 @@ body {
 
 /* AJUSTE: Efeito Hover Circular */
 .social-icon:hover {
-    background-color: var(--accent-yellow); /* Fundo Amarelo no hover */
-    color: var(--text-dark); /* Ícone Preto no hover */
+    background-color: #F2C94C; /* Fundo Amarelo no hover */
+    color: #4A4A4A; /* Ícone Preto no hover */
     transform: scale(1.1); /* Um pequeno zoom para feedback visual */
 }
 
