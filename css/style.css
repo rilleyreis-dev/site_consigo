@@ -25,16 +25,16 @@ body {
 .header {
     background: #FFFFFF;
     color: #4A4A4A;
-    /* REMOVIDO: position: sticky, top: 0, z-index: 1000, box-shadow */
 }
 
-/* NOVO: Estilos para a Barra de Navegação FICA (Sticky) */
+/* NOVO: Estilos para a Barra de Navegação FICA (Fixed) */
 .header-nav-sticky {
     background: #FFFFFF;
-    position: sticky; 
+    position: fixed; /* GARANTE A FIXAÇÃO */
     top: 0;
+    width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra na barra fixa */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
 }
 
 .header-top {
@@ -211,6 +211,9 @@ body {
     display: flex;
     align-items: center;
     position: relative;
+    
+    /* CORREÇÃO CHAVE: Margem para compensar a barra fixa de aproximadamente 60px */
+    margin-top: 60px; 
 }
 
 .hero-content {
@@ -615,6 +618,12 @@ body {
 
 /* --- RESPONSIVIDADE BÁSICA (Abaixo de 768px) --- */
 @media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
     .footer-content {
         flex-direction: column;
         align-items: center;
@@ -657,323 +666,9 @@ body {
     .social-icons {
         justify-content: center; /* Centraliza os ícones em mobile */
     }
-}
 
-.services-header {
-    background: linear-gradient(135deg, #29C4D9 0%, #F2C94C 100%);
-}
-
-/* Company Content */
-.company-content {
-    padding: 80px 0;
-}
-
-.content-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 60px;
-    align-items: start;
-    margin-bottom: 60px;
-}
-
-.content-text blockquote {
-    font-size: 24px;
-    font-style: italic;
-    color: #4A4A4A;
-    border-left: 4px solid #29C4D9;
-    padding-left: 30px;
-    margin-bottom: 40px;
-}
-
-.professional-info h3,
-.benefits h3,
-.methodology h3 {
-    font-size: 28px;
-    color: #4A4A4A;
-    margin-bottom: 20px;
-}
-
-.professional-info p,
-.benefits p,
-.methodology p {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #4A4A4A;
-    line-height: 1.7;
-}
-
-.benefits ul {
-    list-style: none;
-    margin-left: 0;
-}
-
-.benefits li {
-    padding: 8px 0;
-    padding-left: 25px;
-    position: relative;
-    color: #4A4A4A;
-}
-
-.benefits li:before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #7CCB92;
-    font-weight: bold;
-}
-
-.content-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-/* Mission Vision Values */
-.mission-vision-values {
-    background: #E5E5E5;
-    padding: 60px 40px;
-    border-radius: 15px;
-}
-
-.mvv-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-.mvv-item h3 {
-    font-size: 24px;
-    color: #4A4A4A;
-    margin-bottom: 15px;
-}
-
-.mvv-item p {
-    color: #4A4A4A;
-    line-height: 1.7;
-}
-
-/* Services Detailed */
-.services-intro {
-    padding: 60px 0;
-    background: #E5E5E5;
-    text-align: center;
-}
-
-.intro-content p {
-    font-size: 18px;
-    color: #4A4A4A;
-    max-width: 800px;
-    margin: 0 auto 30px;
-    line-height: 1.7;
-}
-
-.services-detailed {
-    padding: 80px 0;
-}
-
-.services-grid-detailed {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-}
-
-.service-card {
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(41, 196, 217, 0.1);
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(41, 196, 217, 0.2);
-    border-color: #29C4D9;
-}
-
-.service-card .service-icon {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.service-card .service-icon i {
-    font-size: 50px;
-    color: #7CCB92;
-}
-
-.service-card h3 {
-    font-size: 20px;
-    color: #4A4A4A;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.service-card p {
-    color: #4A4A4A;
-    line-height: 1.6;
-    text-align: center;
-}
-
-/* CTA Section */
-.cta-section {
-    padding: 80px 0;
-    background: #1c607799;
-    color: white;
-    text-align: center;
-}
-
-.cta-content h3 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.cta-content p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #FFFFFF;
-    opacity: 0.9;
-}
-
-/* Contact Section */
-.contact-section {
-    padding: 80px 0;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-}
-
-.contact-info-section h3 {
-    font-size: 28px;
-    color: #4A4A4A;
-    margin-bottom: 20px;
-}
-
-.contact-info-section p {
-    font-size: 16px;
-    color: #4A4A4A;
-    margin-bottom: 40px;
-}
-
-.contact-methods {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.contact-method {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.contact-method i {
-    font-size: 24px;
-    color: #29C4D9;
-    width: 40px;
-}
-
-.contact-method h4 {
-    font-size: 16px;
-    color: #4A4A4A;
-    margin-bottom: 5px;
-}
-
-.contact-method p {
-    color: #4A4A4A;
-    margin: 0;
-}
-
-/* Contact Form */
-.contact-form {
-    background: #E5E5E5;
-    padding: 40px;
-    border-radius: 15px;
-}
-
-.form-group {
-    margin-bottom: 25px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid #7CCB92;
-    border-radius: 8px;
-    font-size: 16px;
-    font-family: inherit;
-    transition: border-color 0.3s ease;
-    background: #FFFFFF;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #29C4D9;
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-/* Footer */
-.footer {
-    background: #4A4A4A;
-    color: white;
-    padding: 30px 0;
-    text-align: center;
-}
-
-.footer-content p {
-    margin: 0;
-    color: #FFFFFF;
-    opacity: 0.9;
-}
-
-/* WhatsApp Float Button */
-.whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    background: #25d366;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    text-decoration: none;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-    z-index: 1000;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-}
-
-/* Responsive Design (Versão original) */
-@media (max-width: 768px) {
-    .header-top {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
+    /* Estilos Mobile para a Navegação Fixa */
     
-    .contact-info {
-        flex-direction: column;
-        gap: 15px;
-    }
-
     /* Oculta o botão de orçamento no topo do header em mobile */
     .contact-info-nav {
         display: none; 
@@ -1022,7 +717,6 @@ body {
     .nav-menu.active .has-submenu .submenu {
         display: block;
     }
-    
     
     .hero-content {
         grid-template-columns: 1fr;
@@ -1464,12 +1158,6 @@ body {
 /* --- RESPONSIVIDADE ADICIONAL PARA PARCEIRAS (AJUSTADA) --- */
 @media (max-width: 1200px) {
     /* Garante a rolagem horizontal em telas menores que o container */
-    .partners-grid {
-        grid-template-columns: repeat(4, minmax(300px, 1fr)); 
-    }
-}
-@media (max-width: 768px) {
-    /* Mantém a rolagem horizontal para telas menores também */
     .partners-grid {
         grid-template-columns: repeat(4, minmax(300px, 1fr)); 
     }
