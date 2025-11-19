@@ -25,13 +25,14 @@ body {
 .header {
     background: #FFFFFF;
     color: #4A4A4A;
+    /* Remover qualquer position ou overflow: hidden aqui que possa atrapalhar o sticky */
 }
 
-/* NOVO: Estilos para a Barra de Navegação FICA (Fixed) */
+/* NOVO: Estilos para a Barra de Navegação FICA (Sticky - CORRIGIDO) */
 .header-nav-sticky {
     background: #FFFFFF;
-    position: fixed; /* GARANTE A FIXAÇÃO */
-    top: 0;
+    position: sticky; /* Corrigido: Gruda após a linha do logo sair */
+    top: 0; /* O ponto onde ela deve grudar (o topo da tela) */
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
@@ -212,8 +213,8 @@ body {
     align-items: center;
     position: relative;
     
-    /* CORREÇÃO CHAVE: Margem para compensar a barra fixa de aproximadamente 60px */
-    margin-top: 60px; 
+    /* CORREÇÃO: Removemos a margem que era necessária para o 'fixed' */
+    margin-top: 0; 
 }
 
 .hero-content {
@@ -1158,6 +1159,12 @@ body {
 /* --- RESPONSIVIDADE ADICIONAL PARA PARCEIRAS (AJUSTADA) --- */
 @media (max-width: 1200px) {
     /* Garante a rolagem horizontal em telas menores que o container */
+    .partners-grid {
+        grid-template-columns: repeat(4, minmax(300px, 1fr)); 
+    }
+}
+@media (max-width: 768px) {
+    /* Mantém a rolagem horizontal para telas menores também */
     .partners-grid {
         grid-template-columns: repeat(4, minmax(300px, 1fr)); 
     }
