@@ -562,7 +562,6 @@ body {
     left: 0;
     width: 40px;
     height: 2px;
-    background-color: var(--text-light);
 }
 
 /* --- ESTILOS DA INFORMAÇÃO DE CONTATO --- */
@@ -574,12 +573,16 @@ body {
     font-weight: 500;
 }
 
+.info-item a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
 .info-item .icon {
     font-size: 18px;
     margin-right: 10px;
     width: 20px; 
     text-align: center;
-    color: var(--accent-yellow); 
 }
 
 /* --- ESTILOS DAS REDES SOCIAIS --- */
